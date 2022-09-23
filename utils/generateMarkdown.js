@@ -41,9 +41,8 @@ function renderLicenseLink(data, license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
+function renderLicenseSection(data, license) {
   if (data.license === MIT) {
-
   }
   else if (data.license == APACHE) {
   }
@@ -58,8 +57,55 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.projectName}
+  return `
+  # **${data.projectName}**
+  ---
+  ${renderLicenseBadge()}
+  
+  ## Description
 
+  ${data.projectDescription}
+
+  ## Table of Contents
+
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+
+  ## Installation
+
+  To install necessary dependancies, run the following command:
+
+  ${data.install}
+
+  ## Usage
+
+  ${data.repoUse}
+
+  ## License
+
+  This application is licensed under the ${renderLicenseLink()} license.
+
+  ## Contributing
+
+  To contribute to this repo all you need to do is:
+
+  ${data.repoContribute}
+
+  ## Tests
+
+  To run test simply run the following command:
+
+  npm test
+
+  ## Questions
+
+  If you have any questions about the repo, or application, open an issue or contact me directly at ${data.email}.
+  
+  You can find more of my work at [${data.GitHubUsername}](https://github.com/${data.GitHubUsername}/).
 `;
 }
 
