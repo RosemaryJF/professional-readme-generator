@@ -1,11 +1,11 @@
 
-  # more info
+  # Dust Puppies
 
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  undefined
   
   ## Description
 
-  more info
+  To try and collect all the dust puppies in existence
 
   ## Table of Contents
 
@@ -20,21 +20,21 @@
 
   To install necessary dependancies, run the following command:
 
-  more info
+  npm i inquierer@8.2.4
 
   ## Usage
 
-  more info
+  something something 
 
   ## License
 
-  This application is licensed under the https://choosealicense.com/licenses/mit/ license.
+  This application is licensed under the undefined license.
 
   ## Contributing
 
   To contribute to this repo all you need to do is:
 
-  more info
+  something something
 
   ## Tests
 
@@ -44,7 +44,7 @@
 
   ## Questions
 
-  If you have any questions about the repo, or application, open an issue or contact me directly at more info.
+  If you have any questions about the repo, or application, open an issue or contact me directly at rosemaryjforster@gmail.com.
   
-  You can find more of my work at [ more info](https://github.com/ more info/).
+  You can find more of my work at [RosemaryJF](https://github.com/RosemaryJF/).
   

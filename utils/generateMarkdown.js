@@ -8,11 +8,11 @@ function renderLicenseBadge(license) {
   }
   if (license === 'MIT') {
     return licenseBadges.mit
-  } else if (license == 'APACHE') {
+  } else if (license === 'APACHE 2.0') {
     return licenseBadges.apachev2
-  } else if (license == 'GPL') {
+  } else if (license === 'GPL 3.0') {
     return licenseBadges.gplv3
-  } else if (license == 'BSD') {
+  } else if (license === 'BSD 3') {
     return licenseBadges.bsd3
   } else if (license === 'More') {
     return licenseBadges.more
@@ -29,11 +29,11 @@ function renderLicenseLink(license) {
   }
   if (license === 'MIT') {
     return licenseLinks.mit
-  } else if (license == 'APACHE') {
+  } else if (license === 'APACHE 2.0') {
     return licenseLinks.apachev2
-  } else if (license == 'GPL') {
+  } else if (license === 'GPL 3.0') {
     return licenseLinks.gplv3
-  } else if (license == 'BSD') {
+  } else if (license === 'BSD 3') {
     return licenseLinks.bsd3
   } else if (license === 'More') {
     return licenseLinks.more
@@ -100,4 +100,4 @@ function generateMarkdown(data) {
   `;
 }
 
-module.exports = generateMarkdown()
+module.exports = generateMarkdown

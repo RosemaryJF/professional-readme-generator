@@ -1,10 +1,9 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util')
-const generateMarkdown= require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
+
 const questions = [
     {
         type: 'input',
@@ -50,8 +49,8 @@ const questions = [
 
 ]
 
-function init() {
-    return inquirer.prompt(questions)
+async function init() {
+    await inquirer.prompt(questions)
         .then((data) => {
             const readMe = generateMarkdown(data)
             fs.writeFile("README.md", readMe, (err) =>
