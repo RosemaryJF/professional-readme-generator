@@ -1,83 +1,91 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
+const util = require('util')
+const markdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-// const questions = []
+const questions = [
+    {
+        type: 'input',
+        message: "What is your GitHub username?",
+        name: "GitHubUsername",
+    },
+    {
+        type: 'input',
+        message: "What is your email address?",
+        name: "email",
+    },
+    {
+        type: 'input',
+        message: "What is your project name?",
+        name: "projectName",
+    },
+    {
+        type: 'input',
+        message: "Please write a short description of your project",
+        name: "projectDescription",
+    },
+    {
+        type: 'list',
+        message: "What kind of license should your project have?",
+        name: "license",
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'More'],
+    },
+    {
+        type: 'input',
+        message: "What command should be run to install dependencies?",
+        name: "install",
+    },
+    {
+        type: 'input',
+        message: "What does the user need to know about using the repo?",
+        name: "repoUse",
+    },
+    {
+        type: 'input',
+        message: "What does the user need to know about contributing to the repo?",
+        name: "repoContribute",
+    },
+
+]
+
+function init() {
+    return inquirer.prompt(questions)
+        .then((data) => {
+            const readMe = markdown.generateMarkdown(data)
+            fs.writeFile("README.md", readMe, (err) =>
+                err ? console.error(err) : console.log("Congrats! Your project README has now been generated!")
+            );
+        })
+        .catch((err) => {
+            console.error(err)
+        })
+}
 // console.log(questions);
 
-inquirer
-    .prompt ([
-        {
-            type: 'input',
-            message: "What is your GitHub username?",
-            name: "GitHubUsername",
-            },
-        {
-            type: 'input',
-            message: "What is your email address?",
-            name: "email",
-            },
-        {
-            type: 'input',
-            message: "What is your project name?",
-            name: "projectName",
-            },
-        {
-            type: 'input',
-            message: "Please write a short description of your project",
-            name: "projectDescription",
-            },
-        {
-            type: 'list',
-            message: "What kind of license should your project have?",
-            name: "license",
-            choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'More'],
-            },
-        {
-            type: 'input',
-            message: "What command should be run to install dependencies?",
-            name: "install",
-            },
-        {
-            type: 'input',
-            message: "What does the user need to know about using the repo?",
-            name: "repoUse",
-            },
-        {
-            type: 'input',
-            message: "What does the user need to know about contributing to the repo?",
-            name: "repoContribute",
-            },
-        
-    ])
+// // TODO: Create a function to write README file
+// function writeToFile(fileName, data) {
+//     // const readMe = fileName("README.md")
+//     // const file = generateMarkdown(data);
+//     fs.writeFile(fileName, data, (err) =>
+//         err ? console.error(err) : console.log("Congrats! Your project README has now been generated!")
+//     );
+// };
 
-    .then (writeToFile())
+// const writeFileAsync = util.promisify(writeToFile);
 
-    // .then((data) => {
-    //     const readMe = generateMarkdown(data)
+// // TODO: Create a function to initialize app
+// async function init() {
+//     try {
+//         const userResponses = await inquirer .prompt(questions);
+//         const readMe = markdown.generateMarkdown(userResponses);
 
-    //     fs.writeFile("README.md", readMe, (err) =>
-    //     err ? console.error(err) : console.log('Congrats! You just generated a professional README')
-    //     )
-    
-    //     return;
-    // });
+//         await writeFileAsync ('README.md', readMe);
+//     } catch (err) {
+//         console.error(err);
+//     };
+// };
 
-// TODO: Create a function to write README file
-function writeToFile(readMe, data)  {
-        const readMe = generateMarkdown(data)
-
-        fs.writeFile("README.md", readMe, (err) =>
-        err ? console.error(err) : console.log('Congrats! You just generated a professional README')
-        )
-}
-
-// TODO: Create a function to initialize app
-// function init() {
-    
-// }
-
-// Function call to initialize app
-// init();
+// // Function call to initialize app
+init();
