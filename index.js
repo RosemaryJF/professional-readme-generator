@@ -2,7 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util')
-const markdown = require('./utils/generateMarkdown');
+const generateMarkdown= require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -53,7 +53,7 @@ const questions = [
 function init() {
     return inquirer.prompt(questions)
         .then((data) => {
-            const readMe = markdown.generateMarkdown(data)
+            const readMe = generateMarkdown(data)
             fs.writeFile("README.md", readMe, (err) =>
                 err ? console.error(err) : console.log("Congrats! Your project README has now been generated!")
             );
@@ -62,30 +62,5 @@ function init() {
             console.error(err)
         })
 }
-// console.log(questions);
 
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-//     // const readMe = fileName("README.md")
-//     // const file = generateMarkdown(data);
-//     fs.writeFile(fileName, data, (err) =>
-//         err ? console.error(err) : console.log("Congrats! Your project README has now been generated!")
-//     );
-// };
-
-// const writeFileAsync = util.promisify(writeToFile);
-
-// // TODO: Create a function to initialize app
-// async function init() {
-//     try {
-//         const userResponses = await inquirer .prompt(questions);
-//         const readMe = markdown.generateMarkdown(userResponses);
-
-//         await writeFileAsync ('README.md', readMe);
-//     } catch (err) {
-//         console.error(err);
-//     };
-// };
-
-// // Function call to initialize app
 init();
