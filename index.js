@@ -8,7 +8,7 @@ const questions = [
     {
         type: 'input',
         message: "What is your GitHub username?",
-        name: "GitHubUsername",
+        name: "username",
     },
     {
         type: 'input',
@@ -29,12 +29,12 @@ const questions = [
         type: 'list',
         message: "What kind of license should your project have?",
         name: "license",
-        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'More'],
+        choices: ['MIT', 'APACHEv2', 'GPLv3', 'BSD3', 'more'],
     },
     {
         type: 'input',
         message: "What command should be run to install dependencies?",
-        name: "install",
+        name: "install (eg npm i)",
     },
     {
         type: 'input',
@@ -47,19 +47,19 @@ const questions = [
         name: "repoContribute",
     },
 
-]
+];
 
 async function init() {
     await inquirer.prompt(questions)
-        .then((data) => {
-            const readMe = generateMarkdown(data)
+        .then((answers) => {
+            console.log(answers)
+            const readMe = generateMarkdown(answers)
             fs.writeFile("README.md", readMe, (err) =>
                 err ? console.error(err) : console.log("Congrats! Your project README has now been generated!")
             );
-        })
-        .catch((err) => {
+        }) .catch((err) => {
             console.error(err)
-        })
-}
+        });
+};
 
 init();
