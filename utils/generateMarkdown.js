@@ -1,3 +1,4 @@
+// Function to render the license badge in the README
 function renderLicenseBadge(license) {
   const licenseBadges = {
     MIT: "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)",
@@ -7,20 +8,9 @@ function renderLicenseBadge(license) {
     more: ""
     } 
 return licenseBadges[license]
-  // if (license === 'MIT') {
-  //   licenseBadges.mit
-  // } else if (license === 'APACHE 2.0') {
-  //   licenseBadges.apachev2
-  // } else if (license === 'GPL 3.0') {
-  //   licenseBadges.gplv3
-  // } else if (license === 'BSD 3') {
-  //   licenseBadges.bsd3
-  // } else if (license === 'More') {
-  //   licenseBadges.more
-  // };
-  
 };
 
+// Function to render the license link in the render license section function
 function renderLicenseLink(license) {
   const licenseLinks = {
     MIT: "[MIT](https://choosealicense.com/licenses/mit/)",
@@ -30,19 +20,9 @@ function renderLicenseLink(license) {
     more: ""
   }
   return licenseLinks[license]
-  // if (license === 'MIT') {
-  //   return licenseLinks.mit
-  // } else if (license === 'APACHE 2.0') {
-  //   return licenseLinks.apachev2
-  // } else if (license === 'GPL 3.0') {
-  //   return licenseLinks.gplv3
-  // } else if (license === 'BSD 3') {
-  //   return licenseLinks.bsd3
-  // } else if (license === 'More') {
-  //   return licenseLinks.more
-  // };
 };
 
+// Function to render the License section of the README
 function renderLicenseSection(license) {
   if (license === 'MIT' || 'APACHEv2' || 'GPLv3' || 'BSD3') {
     return `This application is licensed under the ${renderLicenseLink(license)} license.`
@@ -50,6 +30,7 @@ function renderLicenseSection(license) {
   return ""
 };
 
+// Function to generate the markdown for the writeFile in index.js
 function generateMarkdown(answers) {
   return `
   # ${answers.projectName}
