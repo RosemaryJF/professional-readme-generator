@@ -21,9 +21,9 @@ I learnt a lot about asyncronous functions, using node, and debugging only from 
 
 ## Installation
 
-You will need to clone the application from my GitHub account:  , and have node installed. 
+You will need to clone the application from my GitHub account: https://github.com/RosemaryJF/professional-readme-generator, and have node installed. 
 
-Once cloned to thelocal repository the user will need to run `npm install` so that the necessary packages are installed on the application. From there you will be able to run the application in your intergrated terminal with the following command: `node index.js`.
+Once cloned to the local repository the user will need to run `npm install` so that the necessary packages are installed on the application. From there you will be able to run the application in your intergrated terminal with the following command: `node index.js`.
 
 ---
 
@@ -39,7 +39,7 @@ Once complete the new README file will appear on the side bar. The user is then 
 
 I would advise using this application to generate the README and then cutting it into the applicaple project/application for it, this will minimise unnessacry packages on your project.
 
-The console questions display as the below images depictsL
+The console questions display as the below image depicts:
 
 ![Example of console prompts](./images/console-example.jpg)
 
