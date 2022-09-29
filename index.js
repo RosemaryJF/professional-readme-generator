@@ -34,8 +34,8 @@ const questions = [
     },
     {
         type: 'input',
-        message: "What command should be run to install dependencies?",
-        name: "install (eg npm i)",
+        message: "What command should be run to install dependencies? (eg npm i)",
+        name: "install",
     },
     {
         type: 'input',

@@ -25,10 +25,20 @@ function renderLicenseLink(license) {
 // Function to render the License section of the README
 function renderLicenseSection(license) {
   if (license === 'MIT' || 'APACHEv2' || 'GPLv3' || 'BSD3') {
-    return `This application is licensed under the ${renderLicenseLink(license)} license.`
+    return `
+    ## License
+    
+    This application is licensed under the ${renderLicenseLink(license)} license.`
   } else (license === 'more')
   return ""
 };
+
+function renderLicenseInTableOfContents(license) {
+  if (license === 'MIT' || 'APACHEv2' || 'GPLv3' || 'BSD3') {
+    return `- [License](#license)`
+  } else (license === 'more')
+  return ""
+}
 
 // Function to generate the markdown for the writeFile in index.js
 function generateMarkdown(answers) {
@@ -45,7 +55,7 @@ function generateMarkdown(answers) {
 
   - [Installation](#installation)
   - [Usage](#usage)
-  - [License](#license)
+  ${renderLicenseInTableOfContents(answers.license)}
   - [Contributing](#contributing)
   - [Tests](#tests)
   - [Questions](#questions)
@@ -59,8 +69,6 @@ function generateMarkdown(answers) {
   ## Usage
 
   ${answers.repoUse}
-
-  ## License
 
   ${renderLicenseSection(answers.license)}
 
