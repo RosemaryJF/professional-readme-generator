@@ -41,7 +41,7 @@ I would advise using this application to generate the README and then cutting it
 
 The console questions display as the below image depicts:
 
-![Example of console prompts](./images/console-example.jpg)
+![Example of console prompts](./assets/images/console-example.jpg)
 
 ---
 
