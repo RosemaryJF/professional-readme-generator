@@ -61,8 +61,8 @@ async function init() {
             fs.writeFile("README.md", readMe, (err) =>
                 err ? console.error(err) : console.log("Congrats! Your project README has now been generated!")
             );
-        // To catch an error if it should occur
-        }) .catch((err) => {
+            // To catch an error if it should occur
+        }).catch((err) => {
             console.error(err)
         });
 };

@@ -6,8 +6,8 @@ function renderLicenseBadge(license) {
     GPLv3: "![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)",
     BSD3: "![License: BSD-3](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)",
     more: ""
-    } 
-return licenseBadges[license]
+  }
+  return licenseBadges[license]
 };
 
 // Function to render the license link in the render license section function
@@ -30,7 +30,7 @@ function renderLicenseSection(license) {
     
   This application is licensed under the ${renderLicenseLink(license)} license.`
   } else if (license === 'more')
-  return ``
+    return ``
 };
 
 // Function to generate the markdown for the writeFile in index.js
@@ -62,7 +62,7 @@ function generateMarkdown(answers) {
   ## Usage
 
   ${answers.repoUse}
-  
+
   ${renderLicenseSection(answers.license)}
 
   ## Contributing
